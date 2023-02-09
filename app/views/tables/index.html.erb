@@ -1,0 +1,15 @@
+<div  class="row mb-3">
+    <div class="col text-center">
+        <h1>Nueva tabla</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col col-sm-8 offset-sm-2">
+        <%= form_tag create_table_path, multipart: true do %>
+        <div class="mb-3">
+            <%= file_field_tag :table, :class=>'form-control' %>
+        </div>
+        <%= submit_tag "Enviar", :class =>'btn btn-primary' %>
+<% end %>
+    </div>
+</div>       
