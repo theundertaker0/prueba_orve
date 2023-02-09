@@ -1,0 +1,38 @@
+<div  class="row mb-3">
+  <div class="col text-center">
+    <h1>Resultado de la exportación</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <table class = "table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>Cliente</th>
+          <th>Descripción del Producto</th>
+          <th>Precio</th>
+          <th>Cantidad</th>
+          <th>Dirección del Vendedor</th>
+          <th>Vendedor</th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @data.each do |sale| %>
+        <tr>
+          <td><%=sale.cliente %></td>
+          <td><%=sale.descripcion %></td>
+          <td><%=sale.precio %></td>
+          <td><%=sale.cantidad %></td>
+          <td><%=sale.direccion_vendedor %></td>
+          <td><%=sale.vendedor %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-12">
+    <div class="alert alert-primary" role="alert">
+      El total de las ventas es de: <%=number_to_currency(@total) %>
+    </div>
+  </div>
+</div>
